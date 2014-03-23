@@ -12,20 +12,29 @@
     - wget
     - tmux
     - sshuttle
-    - glances
+    #- glances
     - swaks
     - mobile-shell
-  - name: install xcode
-    sudo: true
-    command: xcode-select --install
+  #- name: install xcode
+  #  sudo: true
+  #  command: xcode-select --install
+  - name: install PIP stuff
+    sudo: yes
+    pip: name={{item}} state=present
 
+    with_items:
+    - virtualenvwrapper
+    - fabric
+    - boto
+    - awscli
+    - boto
   - name: download dotfiles
     git: repo=https://github.com/jerm/dotfiles dest=~/.dotfiles
 
   - name: install dotfiles
-    shell: bash -c "cd .dotfiles; ./setup.rb"
+    shell: bash -c "cd ~/.dotfiles; ./setup.rb"
 
-  - name: install mac apps package
-    command: curl -s http://getmacapps.com/raw/3oitluxdna4l | sh
+  #- name: install mac apps package
+  #  command: curl -s http://getmacapps.com/raw/3oitluxdna4l | sh
 
 
