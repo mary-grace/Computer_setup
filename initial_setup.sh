@@ -1,5 +1,4 @@
 #!/bin/bash
-xcode-select --install
 sudo easy_install python-setuptools
 sudo pip install ansible
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
