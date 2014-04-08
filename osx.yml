@@ -28,6 +28,8 @@
     - boto
     - awscli
     - boto
+    - ipython
+
   - name: download dotfiles
     git: repo=https://github.com/jerm/dotfiles dest=~/.dotfiles
 
